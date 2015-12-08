@@ -156,7 +156,7 @@ module PI = Parse_info
  T_IS_SMALLER_OR_EQUAL    T_IS_GREATER_OR_EQUAL
  T_BOOL_CAST T_INT_CAST T_DOUBLE_CAST T_STRING_CAST T_ARRAY_CAST T_OBJECT_CAST
  T_UNSET_CAST
- T_IS_IDENTICAL T_IS_NOT_IDENTICAL T_IS_EQUAL     T_IS_NOT_EQUAL
+ T_IS_IDENTICAL T_IS_NOT_IDENTICAL T_IS_EQUAL     T_IS_NOT_EQUAL T_SPACESHIP
  T__AT
  /*(* was declared implicitely because was using directly the character *)*/
  TOPAR TCPAR  TOBRACE TCBRACE
@@ -1085,6 +1085,7 @@ expr:
  | expr T_IS_NOT_IDENTICAL    expr { Binary($1,(Logical NotIdentical,$2),$3) }
  | expr T_IS_EQUAL            expr { Binary($1,(Logical Eq,$2),$3) }
  | expr T_IS_NOT_EQUAL        expr { Binary($1,(Logical NotEq,$2),$3) }
+ | expr T_SPACESHIP           expr { Binary($1,(Logical Spaceship,$2),$3) }
  | expr TSMALLER              expr { Binary($1,(Logical Inf,$2),$3) }
  | expr T_IS_SMALLER_OR_EQUAL expr { Binary($1,(Logical InfEq,$2),$3) }
  | expr TGREATER              expr { Binary($1,(Logical Sup,$2),$3) }

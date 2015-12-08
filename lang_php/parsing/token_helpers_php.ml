@@ -191,6 +191,7 @@ let info_of_tok = function
   | T_UNSET_CAST ii -> ii
   | T_IS_IDENTICAL ii -> ii
   | T_IS_NOT_IDENTICAL ii -> ii
+  | T_SPACESHIP ii -> ii
   | T_IS_EQUAL ii -> ii
   | T_IS_NOT_EQUAL ii -> ii
   | TXOR ii -> ii
@@ -395,6 +396,7 @@ let visitor_info_of_tok f = function
   | T_UNSET_CAST ii -> T_UNSET_CAST(f ii)
   | T_IS_IDENTICAL ii -> T_IS_IDENTICAL(f ii)
   | T_IS_NOT_IDENTICAL ii -> T_IS_NOT_IDENTICAL(f ii)
+  | T_SPACESHIP ii -> T_SPACESHIP(f ii)
   | T_IS_EQUAL ii -> T_IS_EQUAL(f ii)
   | T_IS_NOT_EQUAL ii -> T_IS_NOT_EQUAL(f ii)
   | TXOR ii -> TXOR(f ii)

@@ -396,6 +396,7 @@ and vof_logicalOp =
   | NotEq -> Ocaml.VSum (("NotEq", []))
   | Identical -> Ocaml.VSum (("Identical", []))
   | NotIdentical -> Ocaml.VSum (("NotIdentical", []))
+  | Spaceship -> Ocaml.VSum (("Spaceship", []))
   | AndLog -> Ocaml.VSum (("AndLog", []))
   | OrLog -> Ocaml.VSum (("OrLog", []))
   | XorLog -> Ocaml.VSum (("XorLog", []))

@@ -546,6 +546,11 @@ let m_logicalOp a b =
        A.NotIdentical,
        B.NotIdentical
     )
+  | A.Spaceship, B.Spaceship ->
+    return (
+       A.Spaceship,
+       B.Spaceship
+    )
   | A.AndLog, B.AndLog ->
     return (
        A.AndLog,
@@ -580,6 +585,7 @@ let m_logicalOp a b =
   | A.NotEq, _
   | A.Identical, _
   | A.NotIdentical, _
+  | A.Spaceship, _
   | A.AndLog, _
   | A.OrLog, _
   | A.XorLog, _

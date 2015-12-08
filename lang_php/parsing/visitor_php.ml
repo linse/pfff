@@ -478,6 +478,7 @@ and v_logicalOp =
   | NotEq -> ()
   | Identical -> ()
   | NotIdentical -> ()
+  | Spaceship -> ()
   | AndLog -> ()
   | OrLog -> ()
   | XorLog -> ()

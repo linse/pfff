@@ -341,6 +341,7 @@ and expr =
            | Inf | Sup | InfEq | SupEq
            | Eq | NotEq
            | Identical (* === *) | NotIdentical (* !== *)
+           | Spaceship (* <=> *)
            | AndLog | OrLog | XorLog
            | AndBool | OrBool (* diff with AndLog ? short-circuit operators ? *)
    and assignOp = AssignOpArith of arithOp

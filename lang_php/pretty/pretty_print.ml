@@ -103,6 +103,7 @@ and logicalOp = function
   | Ast_php.NotEq
   | Ast_php.Identical
   | Ast_php.NotIdentical -> 14 , NonAssoc
+  | Ast_php.Spaceship
   | Ast_php.AndLog       -> 5  , Left
   | Ast_php.OrLog        -> 3  , Left
   | Ast_php.XorLog       -> 4  , Left
@@ -158,6 +159,7 @@ and logicalOp = function
   | Ast_php.InfEq        -> "<="  | Ast_php.SupEq        -> ">="
   | Ast_php.Eq           -> "=="  | Ast_php.NotEq        -> "!="
   | Ast_php.Identical    -> "===" | Ast_php.NotIdentical -> "!=="
+  | Ast_php.Spaceship    -> "<=>"
   | Ast_php.AndLog       -> "AND" | Ast_php.OrLog        -> "OR"
   | Ast_php.AndBool      -> "&&"  | Ast_php.OrBool       -> "||"
   | Ast_php.XorLog       -> "XOR"

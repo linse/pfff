@@ -404,6 +404,7 @@ and map_logicalOp =
   | NotEq -> NotEq
   | Identical -> Identical
   | NotIdentical -> NotIdentical
+  | Spaceship -> Spaceship
   | AndLog -> AndLog
   | OrLog -> OrLog
   | XorLog -> XorLog

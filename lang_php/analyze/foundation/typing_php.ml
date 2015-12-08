@@ -702,6 +702,7 @@ and logicalOp env t1 t2 = function
   | Ast_php.Eq | Ast_php.NotEq
   | Ast_php.Identical | Ast_php.NotIdentical ->
       ignore (Unify.unify env t1 t2)
+  | Ast_php.Spaceship
   | Ast_php.AndLog | Ast_php.OrLog | Ast_php.XorLog
   | Ast_php.AndBool | Ast_php.OrBool ->
       (* ?? why nothing there? *)

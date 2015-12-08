@@ -661,6 +661,7 @@ let visit_program ~tag _prefs  hentities (ast, toks) =
 
     | T.T_IS_NOT_EQUAL ii   | T.T_IS_EQUAL ii
     | T.T_IS_NOT_IDENTICAL ii  | T.T_IS_IDENTICAL ii
+    | T.T_SPACESHIP ii
       -> tag ii Operator
 
       (* done in Cast *)
