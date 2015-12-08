@@ -130,6 +130,7 @@ exception Parsing of string
 %token TSEMICOLON
 %token TDOLLAR
 %token TGUIL
+%token TNULLCOAL
 
 
 

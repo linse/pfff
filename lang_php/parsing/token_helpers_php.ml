@@ -147,6 +147,7 @@ let info_of_tok = function
   | TDOT ii -> ii
   | TBANG ii -> ii
   | TTILDE ii -> ii
+  | TNULLCOAL ii -> ii
   | TQUESTION ii -> ii
   | TOBRA ii -> ii
   | TPLUS ii -> ii
@@ -350,6 +351,7 @@ let visitor_info_of_tok f = function
   | TDOT ii -> TDOT(f ii)
   | TBANG ii -> TBANG(f ii)
   | TTILDE ii -> TTILDE(f ii)
+  | TNULLCOAL ii -> TNULLCOAL(f ii)
   | TQUESTION ii -> TQUESTION(f ii)
   | TOBRA ii -> TOBRA(f ii)
   | TPLUS ii -> TPLUS(f ii)

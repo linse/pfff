@@ -687,7 +687,7 @@ let visit_program ~tag _prefs  hentities (ast, toks) =
     | T.TMOD ii | T.TDIV ii | T.TMUL ii | T.TMINUS ii | T.TPLUS ii
       -> tag ii Operator
 
-    | T.TQUESTION ii  | T.TTILDE ii  | T.TBANG ii  | T.TDOT ii
+    | T.TNULLCOAL ii | T.TQUESTION ii  | T.TTILDE ii  | T.TBANG ii  | T.TDOT ii
     | T.TCOMMA ii  | T.TCOLON ii
     | T.TCOLCOL ii
       -> tag ii Punctuation

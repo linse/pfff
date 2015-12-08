@@ -555,6 +555,7 @@ rule st_in_scripting = parse
     | '[' { TOBRA(tokinfo lexbuf) }  | ']' { TCBRA(tokinfo lexbuf) }
 
     | ":" { TCOLON(tokinfo lexbuf) }
+    | "??" { TNULLCOAL(tokinfo lexbuf) }
     | "?" { TQUESTION(tokinfo lexbuf) }
     (* semantic grep or var args extension *)
     | "..." { T_ELLIPSIS(tokinfo lexbuf) }
@@ -680,7 +681,7 @@ rule st_in_scripting = parse
               | T_RETURN _ | T_YIELD _ | T_AWAIT _
               | TEQ _ | T_CONCAT_EQUAL _
               | T_ARROW _ | T_DOUBLE_ARROW _
-              | TQUESTION _ | TCOLON _
+              | TNULLCOAL _ | TQUESTION _ | TCOLON _
             )
           | None (* when in sgrep/spatch mode, < is the first token *)
             when !Flag.xhp_builtin ->

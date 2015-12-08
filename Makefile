@@ -113,8 +113,8 @@ BASICLIBS=commons/lib.cma \
  lang_ml/parsing/lib.cma \
  lang_nw/parsing/lib.cma \
  lang_php/parsing/lib.cma \
-  lang_php/matcher/lib.cma \
-  lang_php/pretty/lib.cma \
+ lang_php/matcher/lib.cma \
+ lang_php/pretty/lib.cma \
  lang_cpp/parsing/lib.cma \
  lang_c/parsing/lib.cma \
  lang_clang/parsing/lib.cma \
