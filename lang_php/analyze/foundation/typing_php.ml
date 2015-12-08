@@ -376,6 +376,10 @@ and expr_ env _lv = function
   | Infix (_, e) -> expr env e
   | Postfix (_, e) -> expr env e
 
+  | NullCoal (e1, e2) ->
+      let t1 = expr env e1 in
+      let t2 = expr env e2 in
+      Unify.unify env t1 t2
   | CondExpr (e1, e2, e3) ->
       iexpr env e1;
       let e2 = expr env e2 in

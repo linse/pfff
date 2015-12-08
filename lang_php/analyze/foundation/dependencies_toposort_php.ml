@@ -123,6 +123,8 @@ module Deps = struct
       raise (Ast_php.TodoNamespace (tok_of_name name))
     | List el -> exprl acc el
     | New (e, el) -> exprl (expr acc e) el
+    | NullCoal (e1, e2) ->
+        expr (expr acc e1) e2
     | CondExpr (e1, e2, e3) ->
         expr (expr (expr acc e1) e2) e3
     | Lambda fd -> func_def acc fd

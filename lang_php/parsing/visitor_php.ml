@@ -296,7 +296,12 @@ and v_expr (x: expr) =
       and v3 = v_expr v3
       in ()
   | Unary ((v1, v2)) -> let v1 = v_wrap v_unaryOp v1 and v2 = v_expr v2 in ()
-  | CondExpr ((v1, v2, v3, v4, v5)) ->
+  | NullCoal ((v1, v2, v3)) ->
+      let v1 = v_lvalue v1
+      and v2 = v_tok v2
+      and v3 = v_expr v3
+      in ()
+   | CondExpr ((v1, v2, v3, v4, v5)) ->
       let v1 = v_expr v1
       and v2 = v_tok v2
       and v3 = v_option v_expr v3

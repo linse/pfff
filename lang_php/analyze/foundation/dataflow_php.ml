@@ -301,6 +301,8 @@ let rec expr_fold fold_env lhs expr acc =
   | Postfix(e, _)
   | Infix (_, e)
     -> handle_lhs e (recr e acc)
+  | NullCoal(e, _, e1) ->
+    recl e (recl e1 acc)
   | CondExpr(e, _, e1opt, _, e2) ->
     recl e (recl e2
               (match e1opt with

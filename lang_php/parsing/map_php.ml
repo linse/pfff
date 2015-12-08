@@ -216,7 +216,12 @@ and map_expr (x) =
       let v1 = map_wrap map_fixOp v1
       and v2 = map_rw_variable v2
       in Infix ((v1, v2))
-  | CondExpr ((v1, v2, v3, v4, v5)) ->
+  | NullCoal ((v1, v2, v3)) ->
+      let v1 = map_lvalue v1
+      and v2 = map_tok v2
+      and v3 = map_expr v3
+      in NullCoal ((v1, v2, v3))
+   | CondExpr ((v1, v2, v3, v4, v5)) ->
       let v1 = map_expr v1
       and v2 = map_tok v2
       and v3 = map_option map_expr v3

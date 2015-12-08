@@ -170,7 +170,12 @@ and vof_expr = function
       let v1 = vof_wrap vof_fixOp v1
       and v2 = vof_rw_variable v2
       in Ocaml.VSum (("Infix", [ v1; v2 ]))
-  | CondExpr ((v1, v2, v3, v4, v5)) ->
+  | NullCoal ((v1, v2, v3)) ->
+      let v1 = vof_lvalue v1
+      and v2 = vof_tok v2
+      and v3 = vof_expr v3
+      in Ocaml.VSum (("NullCoal", [ v1; v2; v3 ]))
+   | CondExpr ((v1, v2, v3, v4, v5)) ->
       let v1 = vof_expr v1
       and v2 = vof_tok v2
       and v3 = vof_option vof_expr v3

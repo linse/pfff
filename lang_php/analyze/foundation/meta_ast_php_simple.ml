@@ -211,6 +211,10 @@ and vof_expr =
       let v1 = vof_expr v1
       and v2 = vof_expr v2
       in Ocaml.VSum (("InstanceOf", [ v1; v2 ]))
+  | NullCoal ((v1, v2)) ->
+      let v1 = vof_expr v1
+      and v2 = vof_expr v2
+      in Ocaml.VSum (("NullCoal", [ v1; v2 ]))
   | CondExpr ((v1, v2, v3)) ->
       let v1 = vof_expr v1
       and v2 = vof_expr v2

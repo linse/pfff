@@ -862,6 +862,7 @@ and expr env e =
     array_valuel env xs
   | Xhp x -> xml env x
 
+  | NullCoal (e1, e2) -> exprl env [e1; e2]
   | CondExpr (e1, e2, e3) -> exprl env [e1; e2; e3]
   | Cast (_, e) -> expr env e
 

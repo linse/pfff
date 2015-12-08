@@ -128,6 +128,7 @@ and expr =
   | New of expr * expr list
   | InstanceOf of expr * expr
 
+  | NullCoal of expr * expr
   | CondExpr of expr * expr * expr
   | Cast of Ast_php.ptype * expr
 

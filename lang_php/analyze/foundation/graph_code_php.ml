@@ -1055,6 +1055,7 @@ and expr env x =
       add_use_edge env (name, E.Class);
       array_valuel env xs
   | Xhp x -> xml env x
+  | NullCoal (e1, e2) -> exprl env [e1; e2]
   | CondExpr (e1, e2, e3) -> exprl env [e1; e2; e3]
   (* less: again, add deps for type? *)
   | Cast (_, e) -> expr env e

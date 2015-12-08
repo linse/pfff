@@ -268,6 +268,7 @@ and expr =
   | Collection of name * array_value list
   | Xhp of xml
 
+  | NullCoal of expr * expr
   | CondExpr of expr * expr * expr
   | Cast of Ast_php.ptype * expr
 

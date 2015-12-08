@@ -238,6 +238,7 @@ and expr =
    * expr1 ?: expr3 returns expr1 if expr1 evaluates to TRUE, and expr3
    * otherwise."
    *)
+  | NullCoal of lvalue * tok (* ?? *) * expr
   | CondExpr of expr * tok (* ? *) * expr option * tok (* : *) * expr
   | AssignList  of tok (* list *)  * list_assign comma_list paren *
         tok (* = *) * expr

@@ -568,7 +568,13 @@ and expr_ env heap x =
       let heap, v = expr env heap e in
       heap, cast env heap ty v
 
-
+  (* TODO double check *)
+  | NullCoal (e1, e2) ->
+      let heap, v1 = expr env heap e1 in
+      let heap, v1 = Ptr.get heap v1 in
+      let heap, v2 = expr env heap e2 in
+      let heap, v = Unify.value heap v1 v2 in
+      heap, v
   (* with '$x = (true)? 45 : "foo"' we will return a
    * Tsum(Vint 42, Vstring "foo")
    *)

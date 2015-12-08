@@ -1122,6 +1122,15 @@ and m_expr a b =
        B.Infix(b1, b2)
     )
     ))
+  | A.NullCoal(a1, a2, a3), B.NullCoal(b1, b2, b3) ->
+    m_lvalue a1 b1 >>= (fun (a1, b1) ->
+    m_tok a2 b2 >>= (fun (a2, b2) ->
+    m_expr a3 b3 >>= (fun (a3, b3) ->
+    return (
+       A.NullCoal(a1, a2, a3),
+       B.NullCoal(b1, b2, b3)
+    )
+    )))
   | A.CondExpr(a1, a2, a3, a4, a5), B.CondExpr(b1, b2, b3, b4, b5) ->
     m_expr a1 b1 >>= (fun (a1, b1) ->
     m_tok a2 b2 >>= (fun (a2, b2) ->
@@ -1399,6 +1408,7 @@ and m_expr a b =
   | A.AssignOp _, _
   | A.Postfix _, _
   | A.Infix _, _
+  | A.NullCoal _, _
   | A.CondExpr _, _
   | A.AssignList _, _
   | A.ArrayLong _, _

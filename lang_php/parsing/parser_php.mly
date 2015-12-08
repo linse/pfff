@@ -1095,6 +1095,8 @@ expr:
  | TBANG  expr                          { Unary((UnBang,$1),$2) }
  | TTILDE expr                          { Unary((UnTilde,$1),$2) }
 
+ /*(* TODO left expr should be a variable, and what is the action between the brackets? *)*/
+ | simple_expr TNULLCOAL  expr	 { NullCoal($1,$2,$3) }
  | expr TQUESTION  expr TCOLON  expr	 { CondExpr($1,$2,Some $3,$4,$5) }
  /*(* PHP 5.3 *)*/
  | expr TQUESTION  TCOLON  expr	 { CondExpr($1,$2,None,$3,$4) }

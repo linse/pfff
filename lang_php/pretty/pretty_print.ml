@@ -132,6 +132,7 @@ let expr_priority = function
   | A.Unpack _          -> 13, Left
   | A.New _             -> 24, NonAssoc
   | A.InstanceOf _      -> 20, NonAssoc
+  | A.NullCoal _
   | A.CondExpr _        -> 8, Left
   | A.Cast _ | A.Infix _  | A.Postfix _  -> 21, Right
 
@@ -617,6 +618,10 @@ and expr_ env = function
       expr env e;
       Pp.print env " instanceof ";
       expr env s;
+  | NullCoal (e1, e2) ->
+      expr env e1;
+      Pp.print env " ?? ";
+      expr env e2;
   | CondExpr (e1, e2, e3) ->
       Pp.choice_left env (
         fun env ->

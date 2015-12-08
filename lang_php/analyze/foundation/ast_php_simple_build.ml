@@ -323,6 +323,8 @@ and expr env = function
       A.Assign (Some op, lvalue env lv, expr env e)
   | Postfix (v, (fop, _)) -> A.Postfix (fop, lvalue env v)
   | Infix ((fop, _), v) -> A.Infix (fop, lvalue env v)
+  | NullCoal (e1, _, e2) ->
+      A.NullCoal (expr env e1, expr env e2)
   | CondExpr (e1, _, None, _, e3) ->
       let e = expr env e1 in
       A.CondExpr (e, e, expr env e3);

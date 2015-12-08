@@ -543,7 +543,7 @@ module IsLvalue = struct
       -> true
 
     | Lambda _
-    | (Cast (_, _)|CondExpr (_, _, _)|InstanceOf (_, _)|New (_, _)|ConsArray _
+    | (Cast (_, _)|NullCoal (_, _)|CondExpr (_, _, _)|InstanceOf (_, _)|New (_, _)|ConsArray _
       | Collection _ |Arrow _
       | Xhp _|Ref _|Call (_, _)|Unop (_, _)|Binop (_, _, _)|Assign (_, _, _)
       | Guil _|String _|Double _|Int _|Unpack _
