@@ -60,7 +60,7 @@ let test regexp =
       (* general tests *)
       Unit_program_lang.unittest;
       Unit_graph_code.unittest ~graph_of_string;
-      Unit_version_control.unittest;
+(*      Unit_version_control.unittest;*)
       Unit_matcher.sgrep_unittest ~ast_fuzzy_of_string;
       (* todo: Unit_matcher.spatch_unittest ~xxx *)
 
@@ -85,13 +85,13 @@ let test regexp =
       Unit_parsing_java.unittest;
       Unit_analyze_java.unittest;
 #if FEATURE_BYTECODE
-      Unit_analyze_bytecode.unittest;
+(*      Unit_analyze_bytecode.unittest;*)
 #endif
       Unit_parsing_js.unittest;
       Unit_analyze_js.unittest;
       Unit_parsing_html.unittest;
-      Unit_parsing_opa.unittest;
-      Unit_parsing_cpp.unittest;
+(*      Unit_parsing_opa.unittest;*)
+(*      Unit_parsing_cpp.unittest;*)
     ]
   in
   let suite = 
